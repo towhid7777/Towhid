@@ -135,7 +135,7 @@ function addColumn() {
 
 // Add New Page (Admin Only)
 function addPage() {
-  pages.push({
+  const newPage = {
     rows: [
       {
         columns: [
@@ -144,12 +144,16 @@ function addPage() {
         ],
       },
     ],
-  });
+  };
+
+  // Add the new page to the beginning of the array
+  pages.unshift(newPage);
+  currentPage = 1; // Set the current page to the newly added page
   saveToLocalStorage(); // Save immediately after adding new page
 
   alert("New Page Added!");
-  setupPagination("adminPagination");
-  loadAdminTable();
+  setupPagination("adminPagination"); // Update pagination
+  loadAdminTable(); // Load the new page immediately
 }
 
 // Save Changes (Admin Only)
