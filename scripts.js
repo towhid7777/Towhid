@@ -12,7 +12,7 @@ let pages = JSON.parse(localStorage.getItem("pages")) || [
   },
 ];
 
-let currentPage = 1;
+let currentPage = 1; // Default current page is the first page
 
 // Save Data to Local Storage
 function saveToLocalStorage() {
@@ -147,13 +147,13 @@ function addPage() {
   };
 
   // Add the new page to the beginning of the array
-  pages.unshift(newPage);
-  currentPage = 1; // Set the current page to the newly added page
-  saveToLocalStorage(); // Save immediately after adding new page
+  pages.unshift(newPage); // Add the new page at the start
+  currentPage = 1; // Set the current page to the new page
+  saveToLocalStorage(); // Save changes immediately
 
   alert("New Page Added!");
   setupPagination("adminPagination"); // Update pagination
-  loadAdminTable(); // Load the new page immediately
+  loadAdminTable(); // Immediately load the new page
 }
 
 // Save Changes (Admin Only)
