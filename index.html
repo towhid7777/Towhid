@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin & User Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Login Section -->
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="loginForm">
+        <input
+          type="text"
+          id="loginCode"
+          placeholder="Enter Admin/User Code"
+          required
+        />
+        <button type="button" onclick="checkLogin()">Login</button>
+      </form>
+      <p id="loginSteps">Use your Admin Code or User Code to login.</p>
+    </div>
+
+    <!-- Welcome Section for User -->
+    <div id="userWelcome" style="display: none">
+      <h1>Welcome, Towhid!</h1>
+      <p>Thank you for visiting our website.</p>
+      <div id="userTableContainer"></div>
+      <div id="userPagination"></div>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Admin Section -->
+    <div id="adminDashboard" style="display: none">
+      <h1>Admin Dashboard</h1>
+      <button onclick="addRow()">Add Row</button>
+      <button onclick="addColumn()">Add Column</button>
+      <button onclick="addPage()">Add Page</button>
+      <table id="editableTable">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td contenteditable="false">Row 1, Col 1</td>
+            <td contenteditable="false">Row 1, Col 2</td>
+            <td><button onclick="copyCellText(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td contenteditable="true">Row 2, Col 1</td>
+            <td contenteditable="true">Row 2, Col 2</td>
+            <td><button onclick="copyCellText(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div id="adminPagination">
+        <button onclick="goToPage(1)">Page 1</button>
+      </div>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

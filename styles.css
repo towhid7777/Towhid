@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.login-container, #userWelcome, #adminDashboard {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background-color: #16213e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00d9ff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d9ff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #007acc;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #00d9ff;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #16213e;
+    color: #00d9ff;
+}
+
+td[contenteditable="true"] {
+    background-color: #203354;
+    cursor: text;
+}
+
+#pagination button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #00d9ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
